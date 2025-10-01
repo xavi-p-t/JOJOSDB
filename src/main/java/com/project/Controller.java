@@ -21,6 +21,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.text.Text;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -33,65 +34,77 @@ import javafx.scene.layout.VBox;
 
 public class Controller implements Initializable {
 
-    @FXML
-    private Button buttonSeasons, buttonBrands, buttonFXML;
+    
     @FXML
     private AnchorPane container;
     @FXML
     private VBox yPane = new VBox();
+    @FXML
+    private ChoiceBox<String> choice;
 
-    private String seasons[] = { "Summer", "Autumn", "Winter", "Spring" };
-    private String brands[] = { "Audi", "BMW", "Citroen", "Fiat", "Ford", "Honda", "Hyundai", "Kia", "Mazda", "Mercedes",
-            "Nissan", "Opel", "Peugeot", "Renault", "Seat", "Skoda", "Suzuki", "Toyota", "Volkswagen", "Volvo" };
+    String options[] = { "JOJO's", "Villanos", "Stands" };
 
     private JSONArray jsonInfo;
 
+    
+
     // Called when the FXML file is loaded
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        try {
-            // Obtenir el recurs del template .fxml
-            URL resource = this.getClass().getResource("/assets/listItem.fxml");
+public void initialize(URL url, ResourceBundle rb) {
+    try {
+        // recurso del template (lo usas en setFXML)
+        URL resource = this.getClass().getResource("/assets/listItem.fxml");
 
-            // Obtenir la llista
-            URL jsonFileURL = getClass().getResource("/assets/animals.json");
-            Path path = Paths.get(jsonFileURL.toURI());
-            String content = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
-            jsonInfo = new JSONArray(content);
+        // poblar ChoiceBox
+        choice.getItems().addAll(options);
+        choice.setValue(options[0]);
 
-            // Actualitza la UI amb els valors inicials de les estacions
-            setSeasons(null);
+        // cargar json inicial y pintar la lista
+        loadJsonForChoice(choice.getValue());
+        setFXML(null);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // listener: cuando cambie la selección, carga nuevo JSON y refresca la vista
+        choice.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal == null) return;
+            try {
+                loadJsonForChoice(newVal);
+                setFXML(null);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+    
+    private void loadJsonForChoice(String option) throws Exception {
+    String opc;
+    switch (option) {
+        case "JOJO's": 
+            opc = "/assets/characters.json"; 
+            break;
+        case "Villanos": 
+            opc = "/assets/games.json"; 
+            break;
+        case "Stands": 
+            opc = "/assets/consoles.json"; 
+            break;
+        default: 
+            opc = "/assets/characters.json"; 
+            break;
     }
 
-    @FXML
-    private void setSeasons(ActionEvent event) {
-        // Esborrar la llista anterior
-        yPane.getChildren().clear();
-
-        // Generar la nova llista
-        for (String name : seasons) {
-            Label label = new Label(name);
-            label.setStyle("-fx-border-color: red;");
-            yPane.getChildren().add(label);
-        }
+    try (java.io.InputStream in = getClass().getResourceAsStream(opc)) {
+        if (in == null) throw new RuntimeException("Recurso no encontrado: " + opc);
+        String content = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+        jsonInfo = new JSONArray(content);
     }
+}
 
-    @FXML
-    private void setBrands(ActionEvent event) {
-        // Esborrar la llista anterior
-        yPane.getChildren().clear();
-
-        // Generar la nova llista
-        for (String name : brands) {
-            Label label = new Label(name);
-            label.setStyle("-fx-border-color: black;");
-            yPane.getChildren().add(label);
-        }
-    }
+    
 
     @FXML
     private void setFXML(ActionEvent event) throws Exception {
@@ -99,6 +112,7 @@ public class Controller implements Initializable {
         // Obtenir el recurs del template .fxml
         URL resource = this.getClass().getResource("/assets/listItem.fxml");
 
+        URL resourceInf = this.getClass().getResource("/assets/infoLayout.fxml");
         // Esborrar la llista anterior
         yPane.getChildren().clear();
 
@@ -108,20 +122,31 @@ public class Controller implements Initializable {
             JSONObject animal = jsonInfo.getJSONObject(i);
 
             // Extreure la informació necessària del JSON
-            String category = animal.getString("category");
-            String name = animal.getString("animal");
-            String color = animal.getString("color");
+            
+            String name = animal.getString("name");
+            String image = animal.getString("image");
 
             // Carregar el template de 'listItem.fxml'
             FXMLLoader loader = new FXMLLoader(resource);
             Parent itemTemplate = loader.load();
             ControllerListItem itemController = loader.getController();
 
+            FXMLLoader loaderInf = new FXMLLoader(resourceInf);
+            Parent itemTemplateInf = loaderInf.load();
+            ControllerInfoLayout infController = loaderInf.getController();
+
+
+
             // Assignar els valors als controls del template
             itemController.setTitle(name);
-            itemController.setSubtitle(category);
-            itemController.setImatge("/assets/images/" + name.toLowerCase() + ".png");
-            itemController.setCircleColor(color);
+            
+            
+
+            itemController.setImatge("/assets/images/" + image);
+
+            infController.setDesc(image);
+            infController.setImatge("/assets/images/" + image);
+            
 
             // Afegir el nou element a 'yPane'
             yPane.getChildren().add(itemTemplate);

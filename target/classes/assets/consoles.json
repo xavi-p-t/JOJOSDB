@@ -1,0 +1,64 @@
+[
+    {
+        "name": "Dio Vrando",
+        "subt": "Villano Parte 1 y Parte 3",
+        "inf": "Originalmente de nacimiento un hombre de bajos recursos, pero de ambición incomparable, Dio es un villano de poca conciencia, gran astucia, y un hambre insaciable de poder.\n\nEs el padre de Giorno Giovanna, el protagonista de la Parte 5: Vento Aureo, así como unos cuantos otros hijos ilegítimos.\n\nComo antagonista dominante de JoJo's Bizarre Adventure, su legado persiste a lo largo de la historia.",
+        "image": "dio_1.png"
+    },
+    {
+        "name": "Esidisi",
+        "subt": "Villano Parte 2",
+        "inf": "Esidisi (エ シ デ ィ シ, eshidishi?), es uno de los Hombres del Pilar, es un antagonista presente en Battle Tendency.\n\nDespués de matar a Loggins, se enfrenta a Joseph Joestar en una arena de combate repleta de estacas en la Isla Air Supplena.",
+        "image": "esidisi.png"
+    },
+    {
+        "name": "Santana",
+        "subt": "Villano Parte 2",
+        "inf": "Santana es descubierto como un hombre misterioso que duerme dentro de un pilar de piedra gigante y cuya existencia está conectada a la Máscara de Piedra.\n\nÉl es parte de la especie de seres llamados los Hombres del Pilar.",
+        "image": "santana.png"
+    },
+    {
+        "name": "Wamuu",
+        "subt": "Villano Parte 2",
+        "inf": "Es un guerrero orgulloso en servicio respetuoso de sus superiores Esidisi y Kars,\n\ntambién sirviendo como rival personal a Joseph Joestar a través de su viaje.",
+        "image": "wamu.png"
+    },
+    {
+        "name": "Kars",
+        "subt": "Villano Parte 2",
+        "inf": "Es el creador de la Máscara de Piedra, y el líder con 102.000 años de antigüedad de los Hombres del Pilar restantes.\n\nSu objetivo es evolucionar todavía más lejos para ser inmune a los rayos del Sol, y por esa razón él busca la Piedra Roja de Aja para energizar sus Máscaras de Piedra,\n\nluchando contra los usuarios de Hamon para su posesión.",
+        "image": "kars.jpg"
+    },
+    {
+        "name": "Yoshikage Kira",
+        "subt": "Villano Parte 4",
+        "inf": "Es un asesino en serie \"parafílico\" comprometido a defender su ininterrumpido estilo de vida que durante años ha aterrorizado la tranquilidad del pueblo de Morioh.\n\nHabiendo permanecido impune durante años, todo cambia cuando el Fantasma de su primera víctima, Reimi Sugimoto, le pide ayuda a los miembros de la Familia Joestar y sus aliados para que lo encuentren después de que asesinara al estudiante Shigekiyo Yangu,\n\nllamando la atención de manera innecesaria.",
+        "image": "kira.png"
+    },
+    {
+        "name": "Diavolo",
+        "subt": "Villano Parte 5",
+        "inf": "Como descubridor de las Flechas, él es el responsable de la reciente proliferación de Usuarios de Stand en el mundo.\n\nViviendo una vida extremadamente reservada como alguien que busca permanecer en la clandestinidad, es el máximo líder del sindicato de crimen organizado llamado Passione,\n\nque corrompe a Italia con el tráfico de drogas en las calles, lo que lo convierte en el enemigo superior y más grande de Giorno y Bruno.",
+        "image": "diavolo.png"
+    }
+    ,
+    {
+        "name": "Enrico Pucci",
+        "subt": "Villano Parte 6",
+        "inf": "Trabajando como un sacerdote en la Prisión Green Dolphin Street,\n\naspira a implementar un plan formulado hace mucho tiempo por DIO para alcanzar el paraíso.",
+        "image": "pucci.png"
+    }
+    ,
+    {
+        "name": "Funny Valentine",
+        "subt": "Villano Parte 7",
+        "inf": "Habiendo encontrado el Corazón del Cadáver durante su servicio en la Guerra de Secesión, Valentine pasa a ser el vigésimo tercer presidente de los Estados Unidos.\n\nVigila el progreso de la competencia Steel Ball Run desde las sombras y espera reunir las partes del Cadáver Sagrado para así usar la reliquia sagrada con el fin de promover los intereses de los Estados Unidos de América.",
+        "image": "valentin.png"
+    },
+    {
+        "name": "Toru",
+        "subt": "Villano Parte 8",
+        "inf": "Él es el líder de la organización de contrabando de la Rokakaka, y gracias a su Stand, suplantó la identidad de Satoru Akefu.\n\nSu principal motivo es conseguir la nueva Rokakaka para producir una medicina revolucionaria, reestructurando el equilibrio de poder en la sociedad en el proceso.",
+        "image": "toru.png"
+    }
+]

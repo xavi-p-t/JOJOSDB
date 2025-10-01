@@ -23,9 +23,7 @@ public class ControllerListItem {
         this.title.setText(title);
     }
 
-    public void setSubtitle(String subtitle) {
-        this.subtitle.setText(subtitle);
-    }
+    
 
     public void setImatge(String imagePath) {
         try {

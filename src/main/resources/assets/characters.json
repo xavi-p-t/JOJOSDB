@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Jonathan Joestar",
+        "image": "jonathan.png",
+        "subt": "JOJO Parte 1",
+        "info": "Siendo hijo del aristócrata George Joestar I, Jonathan es amable, honesto y positivo.\n\nSu vida llena de alegría cambió a la llegada de Dio Brando, su nuevo hermano adoptivo."
+    },
+    {
+        "name": "Joseph Joestar",
+        "image": "joseph.png",
+        "subt": "JOJO Parte 2",
+        "info": "Es un vivo ejemplo de supervivencia, al haber sobrevivido en más de una ocasión a enemigos que evidentemente le superaban en fuerza física, haciendo uso de su astucia y habilidades innatas como peleador.\n\nJoseph enfrenta con valor las inverosímiles amenazas que le acechan a lo largo de su vida con iniciativa e ingenio puro."
+    },
+    {
+        "name": "Jotaro Kujo",
+        "image": "jotaro.png",
+        "subt": "JOJO Parte 3",
+        "info": "Serio, estoico e inteligente, Jotaro brinda gran poder y estabilidad a sus aliados.\n\nTambién es el primer JoJo introducido con un Stand y uno de los personajes más reconocidos de toda la serie."
+    },
+    {
+        "name": "Josuke Higashikata",
+        "image": "josuke_4.png",
+        "subt": "JOJO Parte 4",
+        "info": "Josuke es un estudiante de primer año de preparatoria que reside en Morioh.\n\nDebuta en el volumen 29 (volumen 1 de Diamond Is Unbreakable) donde es buscado por Jotaro Kujo en nombre de Joseph Joestar por tener relación con la Familia Joestar,\n\nya que Josuke es el hijo ilegítimo de Joseph."
+    },
+    {
+        "name": "Giorno Giovanna",
+        "image": "giorno.png",
+        "subt": "JOJO Parte 5",
+        "info": "Es el primer hijo ilegítimo de DIO (el cual fue concebido con el cuerpo robado de Jonathan Joestar) en aparecer en el manga y en la posterior adaptación anime.\n\nAnteriormente es introducido como Haruno Shiobana (汐華 初流乃,?), un adolescente mitad japonés que vive en Italia.\n\nHabla de su intención de unirse a la banda de Passione y su sueño de convertirse en un \"Gang-Star\" (combinación de \"Gángster\" y \"Superstar\")."
+    },
+    {
+        "name": "Jolyne Cujoh",
+        "image": "jolyne.png",
+        "subt": "JOJO Parte 6",
+        "info": "Jolyne Cujoh (空条 徐倫, Kūjō Jorīn?) es la protagonista de Stone Ocean.\n\nEs la hija de Jotaro Kujo y es la única \"JoJo\" femenina hasta la fecha.\n\nAcusada de realizar un crimen que no cometió, fue enviada a la prisión de máxima seguridad Prisión Green Dolphin Street,\n\ndonde descubre la fuente de la antigua aflicción legada de la Familia Joestar."
+    },
+    {
+        "name": "Johnny Joestar",
+        "image": "johnny.png",
+        "subt": "JOJO Parte 7",
+        "info": "Jonathan Joestar (ジョナサン・ジョースター, jonasan jōsutā?), mejor conocido como Johnny Joestar (ジョニージョースター, Joni Jōsutā?) es junto con Gyro Zeppeli, uno de los protagonistas principales de Steel Ball Run\n\ny un personaje menor en JoJolion. Es el séptimo JoJo de la serie JoJo's Bizarre Adventure."
+    },
+    {
+        "name": "Josuke Higashikata",
+        "image": "josuke_8.png",
+        "subt": "JOJO Parte 8",
+        "info": "El joven llamado tentativamente Josuke Higashikata (東方 定助, higashikata jōsuke?) es el protagonista de la Parte 8: JoJolion.\n\nSufre de una amnesia retrógrada, careciendo de cualquier memoria previa a cuando fue hallado por Yasuho Hirose cerca de los Ojos de Muro en el pueblo Morioh."
+    },
+    {
+        "name": "Jodio Joestar",
+        "image": "jodio.png",
+        "subt": "JOJO Parte 9",
+        "info": "protagonista de la novena parte de JoJo's Bizarre Adventure, The JOJOLands.\nJodio es descendiente de la Familia Joestar y como tal,\nes el hijo de Barbara Ann Joestar y el hermano menor de Dragona Joestar.\nSu mayor sueño es convertirse en alguien rico."
+    }
+]

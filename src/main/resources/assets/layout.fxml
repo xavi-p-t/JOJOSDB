@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,32 +9,50 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="403.0" prefWidth="603.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.Controller">
+<AnchorPane prefHeight="400" prefWidth="600" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.Controller">
+
    <children>
-      <VBox alignment="TOP_CENTER" prefWidth="602.0" style="-fx-background-color: #dedede;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="TOP_CENTER" style="-fx-background-color: #dedede;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
          <children>
-            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="578.0" style="-fx-background-color: purple;">
+            <!-- Cabecera -->
+            <HBox alignment="CENTER" prefHeight="54" style="-fx-background-color: purple;">
                <padding>
                   <Insets bottom="8.0" top="8.0" />
                </padding>
                <children>
-                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="75.0" prefWidth="259.0" text="JOJO's Data Base" textFill="WHITE">
+                  <Label text="JOJO's Data Base" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
                </children>
             </HBox>
-            <HBox prefHeight="327.0" prefWidth="573.0">
+
+            <!-- Contenido -->
+            <HBox VBox.vgrow="ALWAYS">
                <children>
-                  <ScrollPane prefHeight="200.0" prefWidth="200.0" />
-                  <ScrollPane prefHeight="327.0" prefWidth="374.0" />
+                  <!-- Lado izquierdo -->
+                  <VBox>
+                     <children>
+                        <ChoiceBox fx:id="choice" prefHeight="25.0" prefWidth="246.0" />
+                        <ScrollPane fitToHeight="true" fitToWidth="true" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="yPane" prefHeight="319.0" prefWidth="242.0" />
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+
+                  <!-- Lado derecho -->
+                  <ScrollPane fitToHeight="true" fitToWidth="true" HBox.hgrow="ALWAYS">
+                     <content>
+                        <AnchorPane fx:id="infoPanel" />
+                     </content>
+                  </ScrollPane>
                </children>
             </HBox>
          </children>
       </VBox>
    </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
 </AnchorPane>
