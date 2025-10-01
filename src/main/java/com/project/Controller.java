@@ -87,10 +87,11 @@ public void initialize(URL url, ResourceBundle rb) {
             opc = "/assets/characters.json"; 
             break;
         case "Villanos": 
-            opc = "/assets/games.json"; 
+            opc = "/assets/consoles.json"; 
             break;
         case "Stands": 
-            opc = "/assets/consoles.json"; 
+            opc = "/assets/games.json"; 
+            
             break;
         default: 
             opc = "/assets/characters.json"; 
