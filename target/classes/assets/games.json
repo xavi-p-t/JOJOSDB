@@ -1,52 +1,75 @@
 [
     {
-    "name": "Super Mario Bros",
-    "year": 1985,
-    "type": "Plataformes",
-    "plot": "Super Mario Bros. és un icònic joc de plataformes creat per Nintendo. El jugador assumeix el paper de Mario o Luigi, i ha de recórrer nivells plens d'enemics i obstacles per rescatar la princesa Peach del malvat Bowser.",
-    "image": "game_smb.png"
+    "name": "Star Platinum",
+    "subt": "Apariciones: Parte 3 y Parte 4",
+    "inf": "Star Platinum (星の白金スタープラチナ, Sutā Purachina?) es el Stand de Jotaro Kujo introducido en Stardust Crusaders.\n\nSiendo uno de los primeros Stands introducidos, acompaña a Jotaro en tres partes de JoJo's Bizarre Adventure, con mayor predominancia en Stardust Crusaders.",
+    "image": "starPlatinum.png"
     },
     {
-    "name": "The Legend of Zelda",
-    "year": 1986,
-    "type": "Acció-Aventura",
-    "plot": "The Legend of Zelda ofereix aventures èpiques amb un toc d'exploració i resolució de puzles. El jugador controla Link, un heroi que ha de derrotar a enemics, resoldre puzles i recórrer regnes per salvar la princesa Zelda i derrotar el mal.",
-    "image": "game_zelda.png"
+    "name": "The World",
+    "subt": "Apariciones: Parte 3 y Parte 7",
+    "inf": "The World (世界ザ・ワールド, Za Wārudo?) es el Stand de DIO, que hace aparición en Stardust Crusaders.\n\nA pesar de que en Stardust Crusaders DIO tiene posesión del cuerpo de Jonathan Joestar y usa su Stand, The World es el Stand original de DIO, el cual como se revela en Diamond is Unbreakable, lo adquirió por medio de una Flecha de Stands.",
+    "image": "theWorld.png"
     },
     {
-    "name": "Pokémon Red i Blue",
-    "year": 1996,
-    "type": "RPG (Role-Playing Game)",
-    "plot": "Pokémon és una sèrie de jocs on els jugadors capturen i entrenen criatures conegudes com a Pokémon. L'objectiu és arribar a ser un Mestre Pokémon, derrotant altres entrenadors i completant la Pokèdex atrapant totes les diferents espècies de Pokémon.",
-    "image": "game_pred.jpeg"
+    "name": "Crazy Diamond",
+    "subt": "Apariciones: Parte 4",
+    "inf": "Crazy Diamond (クレイジー・ダイヤモンド, kureijī daiyamondo?), o simplemente conocido como Crazy D (クレイジー・D, Kureijī Di?) es el Stand de Josuke Higashikata, protagonista principal de la Parte 4: Diamond Is Unbreakable.",
+    "image": "crazyDiamond.jpg"
     },
     {
-    "name": "Mario Kart 64",
-    "year": 1996,
-    "type": "Carreres",
-    "plot": "Mario Kart és una sèrie de jocs de carreres amb personatges de l'univers de Mario. Els jugadors competeixen utilitzant diversos objectes i armes per guanyar avantatges i arribar primer a la línia de meta.",
-    "image": "game_smk.jpeg"
+    "name": "Killer Queen",
+    "subt": "Apariciones: Parte 4 y parte 8",
+    "inf": "Killer Queen (キラークイーン, kira kuīn?), es el Stand de Yoshikage Kira, el antagonista principal de Diamond Is Unbreakable. Kira despertó su Stand cuando fue apuñalado con la Flecha creadora de Stands que su padre obtuvo.",
+    "image": "killerQueen.png"
     },
     {
-    "name": "Metroid",
-    "year": 1986,
-    "type": "Acció-Aventura",
-    "plot": "Metroid és una sèrie que segueix les aventures de Samus Aran, una cazadora de recompenses espacial. Els jocs combinen elements d'exploració, acció i puzles, amb un focus en l'ambientació de ciència-ficció.",
-    "image": "game_metroid.jpeg"
+    "name": "Gold Experience",
+    "subt": "Apariciones: Parte 5",
+    "inf": "Gold Experience (黄金体験ゴールド·エクスペリエンス, Gorudo EkusuperiensuŌgon Taiken?), o simplemente conocido como Gold E (ゴールド·E,?), es el Stand de Giorno Giovanna, protagonista principal en la Parte 5: Vento Aureo.",
+    "image": "goldExperience.png"
     },
     {
-    "name": "Pikmin",
-    "year": 2001,
-    "type": "Estratègia",
-    "plot": "Pikmin és una sèrie de jocs d'estratègia on el jugador controla un astronauta anomenat Capità Olimar, que ha d'explorar un planeta desconegut i utilitzar criatures anomenades Pikmin per resoldre puzles i superar obstacles.",
-    "image": "game_pikmin.png"
+    "name": "King Crimson",
+    "subt": "Apariciones: Parte 5",
+    "inf": "King Crimson (キング・クリムゾン, Kingu Kurimuzon?), a veces abreviado como K ·Crimson (﻿Ｋキング・クリムゾン,?) es el Stand de Diavolo, antagonista principal de Vento Aureo.\n\nTiene un \"Stand secundario\" llamado Epitaph (エピタフ, Epitafu?) el cual es mayormente utilizado por su alter-ego.\n\nDiavolo adquirió su stand por medio de la Flecha.",
+    "image": "kingCrimson.png"
     },
     {
-    "name": "Donkey Kong",
-    "year": 1981,
-    "type": "Plataformes",
-    "plot": "Donkey Kong és una franquícia de jocs de plataformes que va ser el debut del personatge Donkey Kong. Els jocs segueixen les aventures de Donkey Kong i altres personatges mentre es llancen a través de nivells plens d'acció i puzles.",
-    "image": "game_dk.png"
+   "name": "Stone Free",
+    "subt": "Apariciones: Parte 6",
+    "inf": "Stone Free (ストーン・フリー, Sutōn Furī?, con frecuencia abreviado como Ｓストーン・Ｆフリー) es el Stand de Jolyne Cujoh, que aparece en la Parte 6: Stone Ocean.\n\nA diferencia de otros herederos de la Familia Joestar, Jolyne desarrolló su Stand cuando cortó su dedo con la punta de un fragmento de la flecha creadora de Stands que su madre le regaló.",
+    "image": "stoneFree.png"
+    },
+    {
+   "name": "Made In Haven",
+    "subt": "Apariciones: Parte 6",
+    "inf": "A diferencia de otros Stands, que son la manifestación física de la energía vital de su usuario (en esencia sus almas), Made In Heaven es el resultado de la fusión de las almas de Pucci y la del Bebé Verde, el cual nació producto de las almas de 36 prisioneros sacrificados para crear al homúnculo mencionado anteriormente.",
+    "image": "MadeinHeaven.png"
+    },
+    {
+   "name": "Tusk",
+    "subt": "Apariciones: Parte 7",
+    "inf": "Tusk (牙タスク, tasuku?) es el Stand de Johnny Joestar, introducido durante la Parte 7: Steel Ball Run y teniendo una breve aparición en la Parte 8: JoJolion.\n\nAl igual que Echoes de la Parte 4, Tusk puede adoptar diversas formas llamadas \"ACTOS\", recibiendo un aumento en sus estadísticas y habilidad.\n\nLa habilidad de Tusk está ligada al fenómeno conocido como Giro.",
+    "image": "tusk.png"
+    },
+    {
+   "name": "D4C",
+    "subt": "Apariciones: Parte 7",
+    "inf": "Dirty Deeds Done Dirt Cheap (ダーティー・ディーズ・ダン・ダート・チープ, Dātī Dīzu Dan Dāto Chīpu?), con frecuencia abreviado como D4C (ディー･フォー･シー, Dī Fō Shī?) y traducido de nuevo en japonés como Itomo Tayasuku Okonawareru Egetsunai Kōi (いともたやすく行われるえげつない行為,?), es el Stand de Funny Valentine, que aparece en Steel Ball Run.\n\nSirviendo para establecer la existencia de alguna especie de multiverso, D4C es poderosamente único dentro de la serie.",
+    "image": "d4c.png"
+    },
+    {
+   "name": "Soft & Wet",
+    "subt": "Apariciones: Parte 8",
+    "inf": "Soft & Wet (ソフト＆ウェット, Sofuto ando Uetto?) es el Stand de Josefumi Kujo, y por extensión de Josuke Higashikata, que aparece en JoJolion.",
+    "image": "softAndWet.png"
+    },
+    {
+   "name": "Wonder of U",
+    "subt": "Apariciones: Parte 8",
+    "inf": "Wonder of U (ワンダー・オブ・U (ユー), Wandā Obu Yū?) es el Stand de Tooru, que hace su aparición en JoJolion.",
+    "image": "wonderOfU.png"
     }
 ]
   
