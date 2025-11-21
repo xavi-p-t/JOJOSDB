@@ -4,26 +4,16 @@ import java.util.Objects;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.shape.Circle;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class ControllerListItem {
-
-    @FXML
-    private Label title, subtitle;
-
-    @FXML
-    private ImageView img;
-
-    @FXML
-    private Circle circle;
+    @FXML private Label title;
+    @FXML private ImageView img;
 
     public void setTitle(String title) {
         this.title.setText(title);
     }
-
-    
 
     public void setImatge(String imagePath) {
         try {
@@ -31,11 +21,6 @@ public class ControllerListItem {
             this.img.setImage(image);
         } catch (NullPointerException e) {
             System.err.println("Error loading image asset: " + imagePath);
-            e.printStackTrace();
         }
-    }
-
-    public void setCircleColor(String color) {
-        circle.setStyle("-fx-fill: " + color);
     }
 }

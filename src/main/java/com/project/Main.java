@@ -1,16 +1,14 @@
 package com.project;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    final int WINDOW_WIDTH = 600;
-    final int WINDOW_HEIGHT = 400;
+    final int WINDOW_WIDTH = 850;
+    final int WINDOW_HEIGHT = 650;
     final int MIN_WIDTH = 600;
     final int MIN_HEIGHT = 400;
 
