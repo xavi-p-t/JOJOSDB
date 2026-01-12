@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.project.ControllerMobileDetail"
+      spacing="10" alignment="TOP_CENTER" prefWidth="400" prefHeight="600">
+
+    <Button text="←" onAction="#goBack" prefWidth="100"/>
+
+    <ImageView fx:id="imgInf" fitHeight="200" fitWidth="300" preserveRatio="true"/>
+    <Text fx:id="name" style="-fx-font-size: 18px; -fx-font-weight: bold;" wrappingWidth="350"/>
+    <Text fx:id="subt" style="-fx-font-size: 14px; -fx-text-fill: gray;" wrappingWidth="350"/>
+    <Text fx:id="desc" style="-fx-font-size: 14px;" wrappingWidth="350" VBox.vgrow="ALWAYS"/>
+</VBox>
