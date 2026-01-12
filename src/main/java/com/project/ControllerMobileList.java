@@ -1,27 +1,88 @@
 package com.project;
 
-import java.util.Objects;
-
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.ResourceBundle;
 
 public class ControllerMobileList {
 
-    @FXML private Label title;
-    @FXML private ImageView img;
+    @FXML private VBox yPane;
+    private JSONArray jsonInfo;
 
-    public void setTitle(String title) {
-        this.title.setText(title);
+    private String currentJsonPath;
+
+    public void loadJson(String path) throws Exception {
+        currentJsonPath = path; // guardar ruta
+        try (var in = getClass().getResourceAsStream(path)) {
+            String content = new String(in.readAllBytes(), StandardCharsets.UTF_8);
+            jsonInfo = new JSONArray(content);
+        }
     }
 
-    public void setImatge(String imagePath) {
-        try {
-            Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath)));
-            this.img.setImage(image);
-        } catch (NullPointerException e) {
-            System.err.println("Error loading image asset: " + imagePath);
+
+    public void setFXML() throws Exception {
+        URL itemFxml = getClass().getResource("/assets/listItem.fxml");
+        URL detailFxml = getClass().getResource("/assets/mobile_detail.fxml");
+
+        yPane.getChildren().clear();
+
+        for (int i = 0; i < jsonInfo.length(); i++) {
+            JSONObject obj = jsonInfo.getJSONObject(i);
+
+            String name = obj.getString("name");
+            String image = obj.getString("image");
+            String subtitle = obj.optString("subt", "");
+            String description = obj.optString("inf", "");
+
+
+            FXMLLoader loader = new FXMLLoader(itemFxml);
+            Parent item = loader.load();
+            ControllerListItem itemCtrl = loader.getController();
+            itemCtrl.setTitle(name);
+            itemCtrl.setImatge("/assets/images/" + image);
+
+            item.setOnMouseClicked(e -> {
+            try {
+                FXMLLoader loaderInf = new FXMLLoader(detailFxml);
+                Parent detailRoot = loaderInf.load();
+                ControllerMobileDetail infCtrl = loaderInf.getController();
+
+                infCtrl.setName(name);
+                infCtrl.setSubtitle(subtitle);
+                infCtrl.setDesc(description);
+                infCtrl.setImatge("/assets/images/" + image);
+
+                infCtrl.setJsonPath(currentJsonPath);
+
+                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                stage.getScene().setRoot(detailRoot);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+
+
+            yPane.getChildren().add(item);
         }
+    }
+
+    @FXML
+    private void goBack(javafx.event.ActionEvent event) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/mobile_home.fxml"));
+        Parent homeRoot = loader.load();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(homeRoot);
     }
 }

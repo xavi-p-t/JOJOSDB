@@ -2,43 +2,54 @@ package com.project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
-public class ControllerMobileHome {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControllerMobileHome implements Initializable {
 
     @FXML private VBox yPane;
-    @FXML private StackPane rootPane; // contenedor principal
 
-    @FXML
-    public void initialize() {
-        // Crear tres ítems como en la lista de desktop
-        createItem("JOJO's", "/assets/characters.json");
-        createItem("Villanos", "/assets/consoles.json");
-        createItem("Stands", "/assets/games.json");
-    }
-
-    private void createItem(String title, String jsonFile) {
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/listItem.fxml"));
-            Parent itemTemplate = loader.load();
-            ControllerListItem itemController = loader.getController();
-            itemController.setTitle(title);
-            itemController.setImatge("/assets/images/icon_section.png"); // icono genérico
-
-            // Al pulsar, cargar la vista de lista
-            itemTemplate.setOnMouseClicked(e -> {
-                try {
-                    UtilsViews.setViewAnimating("MobileList");
-                } catch (Exception ex) {
-                    ex.printStackTrace();
-                }
-            });
-
-            yPane.getChildren().add(itemTemplate);
+            addSection("JOJO's", "/assets/images/jojo.png", "/assets/characters.json");
+            addSection("Villanos", "/assets/images/villanos.png", "/assets/consoles.json");
+            addSection("Stands", "/assets/images/stands.png", "/assets/games.json");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void addSection(String title, String imagePath, String jsonPath) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/listItem.fxml"));
+        Parent item = loader.load();
+        ControllerListItem itemCtrl = loader.getController();
+        itemCtrl.setTitle(title);
+        itemCtrl.setImatge(imagePath);
+
+        item.setOnMouseClicked(e -> {
+            try {
+                FXMLLoader listLoader = new FXMLLoader(getClass().getResource("/assets/mobile_list.fxml"));
+                Parent listRoot = listLoader.load();
+                ControllerMobileList listCtrl = listLoader.getController();
+
+                listCtrl.loadJson(jsonPath);  
+                listCtrl.setFXML();           
+
+                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                stage.getScene().setRoot(listRoot);
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
+
+        yPane.getChildren().add(item);
     }
 }

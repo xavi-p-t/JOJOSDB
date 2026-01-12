@@ -1,31 +1,62 @@
 package com.project;
 
-import java.util.Objects;
-
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.scene.Node;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+
+import java.util.Objects;
 
 public class ControllerMobileDetail {
 
     @FXML private ImageView imgInf;
-    @FXML private Text name, subt, desc;
-    @FXML private StackPane rootPane;
+    @FXML private Text name;
+    @FXML private Text subt;
+    @FXML private Text desc;
 
-    public void setData(String name, String subt, String desc, String imagePath) {
+    private String jsonPath; // para volver a la lista correcta
+
+    public void setName(String name) {
         this.name.setText(name);
-        this.subt.setText(subt);
-        this.desc.setText(desc);
-        this.imgInf.setImage(new Image(Objects.requireNonNull(getClass().getResourceAsStream(imagePath))));
     }
 
-    public void goBack() throws Exception {
+    public void setSubtitle(String subt) {
+        this.subt.setText(subt);
+    }
+
+    public void setDesc(String desc) {
+        this.desc.setText(desc);
+    }
+
+    public void setImatge(String imagePath) {
+        try {
+            Image image = new Image(Objects.requireNonNull(
+                    getClass().getResourceAsStream(imagePath)
+            ));
+            this.imgInf.setImage(image);
+        } catch (Exception e) {
+            System.err.println("Error loading image asset: " + imagePath);
+        }
+    }
+
+    public void setJsonPath(String path) {
+        this.jsonPath = path;
+    }
+
+    @FXML
+    private void goBack(javafx.event.ActionEvent event) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/mobile_list.fxml"));
-        Parent listView = loader.load();
-        rootPane.getChildren().setAll(listView);
+        Parent listRoot = loader.load();
+
+        ControllerMobileList listCtrl = loader.getController();
+        listCtrl.loadJson(jsonPath);
+        listCtrl.setFXML();
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.getScene().setRoot(listRoot);
     }
 }

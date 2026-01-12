@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.project.ControllerMobileDetail"
-      spacing="10" alignment="TOP_CENTER" prefWidth="400" prefHeight="600">
+<VBox alignment="TOP_CENTER" prefHeight="600" prefWidth="400" spacing="10" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.ControllerMobileDetail">
 
-    <Button text="←" onAction="#goBack" prefWidth="100"/>
+    <Button onAction="#goBack" prefWidth="100" style="-fx-background-color: lightgrey; -fx-border-color: black;" text="← Atrás" />
 
-    <ImageView fx:id="imgInf" fitHeight="200" fitWidth="300" preserveRatio="true"/>
-    <Text fx:id="name" style="-fx-font-size: 18px; -fx-font-weight: bold;" wrappingWidth="350"/>
-    <Text fx:id="subt" style="-fx-font-size: 14px; -fx-text-fill: gray;" wrappingWidth="350"/>
-    <Text fx:id="desc" style="-fx-font-size: 14px;" wrappingWidth="350" VBox.vgrow="ALWAYS"/>
+    <ImageView fx:id="imgInf" fitHeight="220" fitWidth="320" preserveRatio="true" />
+
+    <Text fx:id="name" style="-fx-font-size: 20px; -fx-font-weight: bold;" wrappingWidth="350" />
+
+    <Text fx:id="subt" style="-fx-font-size: 16px; -fx-fill: gray;" wrappingWidth="350" />
+
+    <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="300">
+        <content>
+            <Text fx:id="desc" style="-fx-font-size: 14px;" wrappingWidth="350" />
+        </content>
+    </ScrollPane>
+
 </VBox>

@@ -24,7 +24,7 @@ public class Controller implements Initializable {
     private ChoiceBox<String> choice;
 
     @FXML
-    private AnchorPane infoPanel; // 👉 panel derecho
+    private AnchorPane infoPanel; 
 
     String options[] = { "JOJO's", "Villanos", "Stands" };
     private JSONArray jsonInfo;
@@ -92,14 +92,14 @@ public class Controller implements Initializable {
             String description = obj.optString("inf", "Sin descripción");
 
 
-            // 👉 cargar item de lista
+          
             FXMLLoader loader = new FXMLLoader(resource);
             Parent itemTemplate = loader.load();
             ControllerListItem itemController = loader.getController();
             itemController.setTitle(name);
             itemController.setImatge("/assets/images/" + image);
 
-            // 👉 cargar layout de detalle
+            
             FXMLLoader loaderInf = new FXMLLoader(resourceInf);
             Parent itemTemplateInf = loaderInf.load();
             ControllerInfoLayout infController = loaderInf.getController();
@@ -108,7 +108,7 @@ public class Controller implements Initializable {
             infController.setSubtitle(subtitle);
             infController.setImatge("/assets/images/" + image);
 
-            // 👉 evento de clic: mostrar detalle en panel derecho
+            
             itemTemplate.setOnMouseClicked(e -> {
                 infoPanel.getChildren().clear();
                 infoPanel.getChildren().add(itemTemplateInf);
