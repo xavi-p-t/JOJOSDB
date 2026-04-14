@@ -52,25 +52,23 @@ public class ControllerMobileList {
             itemCtrl.setImatge("/assets/images/" + image);
 
             item.setOnMouseClicked(e -> {
-            try {
-                FXMLLoader loaderInf = new FXMLLoader(detailFxml);
-                Parent detailRoot = loaderInf.load();
-                ControllerMobileDetail infCtrl = loaderInf.getController();
+                try {
+                    // Recuperamos el controlador de detalles ya existente
+                    ControllerMobileDetail infCtrl = (ControllerMobileDetail) UtilsViews.getController("MobileDetail");
 
-                infCtrl.setName(name);
-                infCtrl.setSubtitle(subtitle);
-                infCtrl.setDesc(description);
-                infCtrl.setImatge("/assets/images/" + image);
+                    infCtrl.setName(name);
+                    infCtrl.setSubtitle(subtitle);
+                    infCtrl.setDesc(description);
+                    infCtrl.setImatge("/assets/images/" + image);
+                    infCtrl.setJsonPath(currentJsonPath);
 
-                infCtrl.setJsonPath(currentJsonPath);
+                    // Cambiamos a la vista de detalle
+                    UtilsViews.setView("MobileDetail");
 
-                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                stage.getScene().setRoot(detailRoot);
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-            }
-        });
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            });
 
 
 

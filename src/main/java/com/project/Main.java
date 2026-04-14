@@ -32,13 +32,20 @@ public class Main extends Application {
             stage.show();
             
             stage.widthProperty().addListener((obs, oldVal, newVal) -> {
-            if (newVal.doubleValue() < 600) {
-                
-                UtilsViews.setView("Mobile");
-            } else {
-                UtilsViews.setView("Desktop");
-                    
-            }
+                String activeView = UtilsViews.getActiveView();
+                boolean isMobileWidth = newVal.doubleValue() < 600;
+
+                if (isMobileWidth) {
+                    // Si se hace pequeño y estamos en Desktop, pasamos a la Home de Mobile
+                    if ("Desktop".equals(activeView)) {
+                        UtilsViews.setView("Mobile");
+                    }
+                } else {
+                    // Si se hace grande y estamos en alguna pantalla de Mobile, pasamos a Desktop
+                    if (activeView != null && activeView.startsWith("Mobile")) {
+                        UtilsViews.setView("Desktop");
+                    }
+                }
             });
 
             // Afegeix una icona només si no és un Mac

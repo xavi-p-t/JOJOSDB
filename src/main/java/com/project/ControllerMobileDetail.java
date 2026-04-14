@@ -49,14 +49,11 @@ public class ControllerMobileDetail {
 
     @FXML
     private void goBack(javafx.event.ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/mobile_list.fxml"));
-        Parent listRoot = loader.load();
-
-        ControllerMobileList listCtrl = loader.getController();
+        // Recuperamos el controlador de la lista por si necesitamos recargar el JSON
+        ControllerMobileList listCtrl = (ControllerMobileList) UtilsViews.getController("MobileList");
         listCtrl.loadJson(jsonPath);
         listCtrl.setFXML();
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.getScene().setRoot(listRoot);
+        UtilsViews.setView("MobileList"); // Volvemos a la lista
     }
 }

@@ -26,6 +26,11 @@ public class ControllerMobileHome implements Initializable {
         }
     }
 
+    @FXML
+    private void goBack(javafx.event.ActionEvent event) {
+        UtilsViews.setView("Mobile"); // Volvemos a la Home
+    }
+
     private void addSection(String title, String imagePath, String jsonPath) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/assets/listItem.fxml"));
         Parent item = loader.load();
@@ -35,15 +40,13 @@ public class ControllerMobileHome implements Initializable {
 
         item.setOnMouseClicked(e -> {
             try {
-                FXMLLoader listLoader = new FXMLLoader(getClass().getResource("/assets/mobile_list.fxml"));
-                Parent listRoot = listLoader.load();
-                ControllerMobileList listCtrl = listLoader.getController();
-
+                // Recuperamos el controlador que ya cargó UtilsViews en el Main
+                ControllerMobileList listCtrl = (ControllerMobileList) UtilsViews.getController("MobileList");
                 listCtrl.loadJson(jsonPath);  
                 listCtrl.setFXML();           
 
-                Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                stage.getScene().setRoot(listRoot);
+                // Cambiamos de vista usando nuestro gestor
+                UtilsViews.setView("MobileList");
 
             } catch (Exception ex) {
                 ex.printStackTrace();
