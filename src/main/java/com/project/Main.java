@@ -15,7 +15,6 @@ public class Main extends Application {
         @Override
         public void start(Stage stage) throws Exception {
 
-            // Carrega la vista inicial des del fitxer FXML
             UtilsViews.parentContainer.setStyle("-fx-font: 14 arial;");
             UtilsViews.addView(getClass(), "Desktop", "/assets/layout.fxml");
             UtilsViews.addView(getClass(), "Mobile", "/assets/mobile_home.fxml");
@@ -36,12 +35,10 @@ public class Main extends Application {
                 boolean isMobileWidth = newVal.doubleValue() < 600;
 
                 if (isMobileWidth) {
-                    // Si se hace pequeño y estamos en Desktop, pasamos a la Home de Mobile
                     if ("Desktop".equals(activeView)) {
                         UtilsViews.setView("Mobile");
                     }
                 } else {
-                    // Si se hace grande y estamos en alguna pantalla de Mobile, pasamos a Desktop
                     if (activeView != null && activeView.startsWith("Mobile")) {
                         UtilsViews.setView("Desktop");
                     }

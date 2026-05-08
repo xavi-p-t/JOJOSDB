@@ -28,7 +28,7 @@ public class ControllerMobileHome implements Initializable {
 
     @FXML
     private void goBack(javafx.event.ActionEvent event) {
-        UtilsViews.setView("Mobile"); // Volvemos a la Home
+        UtilsViews.setView("Mobile"); 
     }
 
     private void addSection(String title, String imagePath, String jsonPath) throws Exception {
@@ -40,12 +40,10 @@ public class ControllerMobileHome implements Initializable {
 
         item.setOnMouseClicked(e -> {
             try {
-                // Recuperamos el controlador que ya cargó UtilsViews en el Main
                 ControllerMobileList listCtrl = (ControllerMobileList) UtilsViews.getController("MobileList");
                 listCtrl.loadJson(jsonPath);  
                 listCtrl.setFXML();           
 
-                // Cambiamos de vista usando nuestro gestor
                 UtilsViews.setView("MobileList");
 
             } catch (Exception ex) {

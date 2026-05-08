@@ -18,7 +18,7 @@ public class ControllerMobileDetail {
     @FXML private Text subt;
     @FXML private Text desc;
 
-    private String jsonPath; // para volver a la lista correcta
+    private String jsonPath; 
 
     public void setName(String name) {
         this.name.setText(name);
@@ -49,11 +49,10 @@ public class ControllerMobileDetail {
 
     @FXML
     private void goBack(javafx.event.ActionEvent event) throws Exception {
-        // Recuperamos el controlador de la lista por si necesitamos recargar el JSON
         ControllerMobileList listCtrl = (ControllerMobileList) UtilsViews.getController("MobileList");
         listCtrl.loadJson(jsonPath);
         listCtrl.setFXML();
 
-        UtilsViews.setView("MobileList"); // Volvemos a la lista
+        UtilsViews.setView("MobileList");
     }
 }

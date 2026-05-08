@@ -22,7 +22,7 @@ public class ControllerMobileList {
     private String currentJsonPath;
 
     public void loadJson(String path) throws Exception {
-        currentJsonPath = path; // guardar ruta
+        currentJsonPath = path; 
         try (var in = getClass().getResourceAsStream(path)) {
             String content = new String(in.readAllBytes(), StandardCharsets.UTF_8);
             jsonInfo = new JSONArray(content);
@@ -53,7 +53,6 @@ public class ControllerMobileList {
 
             item.setOnMouseClicked(e -> {
                 try {
-                    // Recuperamos el controlador de detalles ya existente
                     ControllerMobileDetail infCtrl = (ControllerMobileDetail) UtilsViews.getController("MobileDetail");
 
                     infCtrl.setName(name);
@@ -62,7 +61,6 @@ public class ControllerMobileList {
                     infCtrl.setImatge("/assets/images/" + image);
                     infCtrl.setJsonPath(currentJsonPath);
 
-                    // Cambiamos a la vista de detalle
                     UtilsViews.setView("MobileDetail");
 
                 } catch (Exception ex) {
